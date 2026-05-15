@@ -3,495 +3,494 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Karma Be Special — TikTok Ads 2026</title>
+<title>Karma Be Special × TikTok Ads</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0a0a;
-    --surface: #111111;
-    --card: #181818;
-    --card2: #1f1f1f;
-    --border: #2a2a2a;
-    --gold: #D4AF37;
-    --gold2: #F5CC4A;
-    --white: #ffffff;
-    --text: #e8e8e8;
-    --muted: #888888;
-    --radius: 12px;
+    --black:  #0D0D0D;
+    --card:   #161616;
+    --card2:  #1C1C1C;
+    --border: #2A2A2A;
+    --gold:   #C9922A;
+    --gold-l: #E8AB3C;
+    --gold-dim: rgba(201,146,42,.12);
+    --white:  #FFFFFF;
+    --muted:  rgba(255,255,255,.45);
+    --faint:  rgba(255,255,255,.15);
+    --green:  #22C55E;
+    --red-w:  #EF4444;
   }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    font-size: 14px;
-    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+    background: var(--black); color: var(--white); line-height: 1.6;
   }
 
-  /* NAV */
-  nav {
+  /* ─── TOP NAV ─── */
+  .topnav {
     position: sticky; top: 0; z-index: 100;
-    background: rgba(10,10,10,0.97);
+    background: rgba(13,13,13,.92); backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
-    padding: 0 32px;
+    padding: 0 32px; height: 52px;
     display: flex; align-items: center; justify-content: space-between;
-    height: 52px;
   }
-  .nav-logo { display: flex; align-items: center; gap: 10px; }
-  .nav-k { background: var(--gold); color: #000; font-size: 13px; font-weight: 900; padding: 3px 9px; border-radius: 4px; letter-spacing: 1px; }
-  .nav-name { font-size: 13px; font-weight: 700; color: var(--white); }
-  .nav-right { font-size: 11px; color: var(--muted); }
-
-  main { max-width: 1080px; margin: 0 auto; padding: 48px 24px 80px; }
-
-  section { margin-bottom: 56px; }
-
-  .label {
-    display: inline-block;
-    font-size: 10px; font-weight: 800; letter-spacing: 2.5px;
-    text-transform: uppercase; color: var(--gold);
-    margin-bottom: 10px;
+  .nav-left { display: flex; align-items: center; gap: 12px; }
+  .k-logo {
+    width: 30px; height: 30px; background: var(--gold);
+    border-radius: 6px; display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 15px; color: var(--black); flex-shrink: 0;
   }
-  h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; color: var(--white); line-height: 1.05; margin-bottom: 10px; }
-  h2 { font-size: 1.5rem; font-weight: 800; color: var(--white); margin-bottom: 8px; }
-  h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 6px; }
-  .sub { color: var(--muted); font-size: 13px; margin-bottom: 28px; }
+  .nav-title { font-size: 14px; font-weight: 600; color: rgba(255,255,255,.85); }
+  .nav-right { font-size: 13px; color: var(--muted); }
 
-  hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
-
-  /* GRIDS */
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
-  .grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
-
-  /* CARD */
-  .card {
+  /* ─── HERO ─── */
+  .hero {
+    padding: 96px 32px 80px;
+    max-width: 1100px; margin: 0 auto;
+  }
+  .hero-chip {
+    display: inline-flex; align-items: center; gap: 8px;
     background: var(--card); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 22px;
+    color: rgba(255,255,255,.6); padding: 6px 16px; border-radius: 100px;
+    font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    margin-bottom: 40px;
   }
-  .card.gold-border { border-color: rgba(212,175,55,0.4); }
+  .hero-chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+  .hero h1 {
+    font-size: clamp(44px, 7vw, 84px); font-weight: 900;
+    line-height: 1.0; letter-spacing: -.02em;
+    margin-bottom: 24px; max-width: 800px;
+  }
+  .hero p {
+    font-size: 18px; color: rgba(255,255,255,.55);
+    max-width: 560px; margin-bottom: 64px; line-height: 1.65;
+    font-weight: 400;
+  }
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+    border-top: 1px solid var(--border); padding-top: 40px;
+  }
+  .hstat {
+    background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+    padding: 24px 20px;
+  }
+  .hstat .hlabel {
+    font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
+    color: var(--muted); margin-bottom: 10px; display: block;
+  }
+  .hstat .hnum {
+    font-size: 36px; font-weight: 800; line-height: 1;
+    margin-bottom: 4px; display: block;
+  }
+  .hstat .hnum.gold { color: var(--gold); }
+  .hstat .hnum.muted { color: rgba(255,255,255,.3); }
+  .hstat .hsub { font-size: 12px; color: var(--muted); }
 
-  /* KPI */
-  .kpi { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 18px; }
-  .kpi-label { font-size: 10px; font-weight: 700; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px; }
-  .kpi-value { font-size: 2rem; font-weight: 900; color: var(--white); line-height: 1; }
-  .kpi-value.gold { color: var(--gold); }
-  .kpi-sub { font-size: 11px; color: var(--muted); margin-top: 5px; }
+  /* ─── SECTION ─── */
+  .section { padding: 80px 32px; max-width: 1100px; margin: 0 auto; }
+  .section-divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+  .stag {
+    font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em;
+    color: var(--muted); margin-bottom: 20px; display: block;
+  }
+  h2 {
+    font-size: clamp(28px, 4vw, 44px); font-weight: 800;
+    line-height: 1.1; letter-spacing: -.02em; margin-bottom: 12px;
+  }
+  .lead { font-size: 16px; color: rgba(255,255,255,.5); margin-bottom: 48px; max-width: 580px; }
 
-  /* HERO BADGE */
+  /* ─── STATUS TABLE ─── */
+  .status-table { width: 100%; border-collapse: collapse; margin-top: 40px; }
+  .status-table th {
+    text-align: left; font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .1em; color: var(--muted);
+    padding: 12px 20px; border-bottom: 1px solid var(--border);
+  }
+  .status-table td {
+    padding: 18px 20px; border-bottom: 1px solid var(--border);
+    font-size: 14px; vertical-align: middle;
+  }
+  .status-table tr:last-child td { border-bottom: none; }
+  .status-table tr:hover td { background: rgba(255,255,255,.02); }
+  .channel-name { font-weight: 700; font-size: 15px; }
   .badge {
     display: inline-flex; align-items: center; gap: 6px;
-    background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.3);
-    color: var(--gold2); font-size: 11px; font-weight: 700; letter-spacing: 1px;
-    text-transform: uppercase; padding: 5px 14px; border-radius: 100px;
-    margin-bottom: 18px;
+    padding: 4px 12px; border-radius: 100px; font-size: 12px; font-weight: 600;
   }
-  .dot-live { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); display: inline-block; }
+  .badge-green { background: rgba(34,197,94,.12); color: #4ade80; border: 1px solid rgba(34,197,94,.2); }
+  .badge-orange { background: rgba(251,146,60,.12); color: #fb923c; border: 1px solid rgba(251,146,60,.2); }
+  .badge-red { background: rgba(239,68,68,.1); color: #f87171; border: 1px solid rgba(239,68,68,.15); }
+  .badge-gold { background: var(--gold-dim); color: var(--gold-l); border: 1px solid rgba(201,146,42,.25); }
+  .badge::before { content: '●'; font-size: 8px; }
 
-  /* TABLE */
-  table { width: 100%; border-collapse: collapse; }
-  th { text-align: left; padding: 9px 12px; font-size: 10px; font-weight: 800; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; border-bottom: 1px solid var(--border); }
-  td { padding: 12px 12px; font-size: 13px; color: var(--text); border-bottom: 1px solid rgba(42,42,42,0.6); }
-  tr:last-child td { border-bottom: none; }
-  .row-total td { font-weight: 800; color: var(--white); background: rgba(212,175,55,0.06); border-top: 1px solid var(--border); }
+  /* ─── WHY ADS GRID ─── */
+  .ads-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 48px; }
+  .ads-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 28px 24px; position: relative; overflow: hidden;
+  }
+  .ads-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--gold); }
+  .ads-card .anum { font-size: 40px; font-weight: 800; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+  .ads-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .ads-card p { font-size: 13px; color: var(--muted); }
 
-  /* PILL */
-  .pill { display: inline-block; padding: 2px 9px; border-radius: 100px; font-size: 11px; font-weight: 700; }
-  .pill.gold { background: rgba(212,175,55,0.15); color: var(--gold2); }
-  .pill.white { background: rgba(255,255,255,0.08); color: #ccc; }
-  .pill.green { background: rgba(46,184,92,0.15); color: #5dde88; }
+  /* ─── SCOPE ─── */
+  .scope-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-top: 48px; }
+  .scope-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 32px 28px;
+  }
+  .scope-card.featured {
+    border-color: var(--gold); background: var(--card2);
+    grid-column: span 1;
+  }
+  .scope-card .sicon { font-size: 26px; margin-bottom: 14px; }
+  .scope-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 14px; }
+  .scope-card.featured h3 { color: var(--gold-l); }
+  .scope-card ul { list-style: none; }
+  .scope-card ul li {
+    font-size: 13px; color: rgba(255,255,255,.6);
+    padding: 8px 0; border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+  .scope-card ul li:last-child { border-bottom: none; }
+  .scope-card ul li::before { content: '→'; color: var(--gold); flex-shrink: 0; font-size: 12px; margin-top: 2px; }
 
-  /* PROOF / CASE STUDY */
+  /* ─── CASE STUDY ─── */
+  .case-wrap {
+    background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+    padding: 52px 48px; margin-top: 48px; position: relative; overflow: hidden;
+  }
+  .case-wrap::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-l));
+  }
+  .case-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 8px; }
+  .case-wrap h3 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -.02em; margin-bottom: 6px; }
+  .case-sub { font-size: 15px; color: var(--muted); margin-bottom: 40px; }
+  .case-nums { display: flex; gap: 48px; flex-wrap: wrap; margin-bottom: 36px; }
+  .cnum .cn { font-size: 52px; font-weight: 800; line-height: 1; margin-bottom: 4px; }
+  .cnum .cn.gold { color: var(--gold); }
+  .cnum .cn.white { color: white; }
+  .cnum .cl { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
   .case-box {
-    background: linear-gradient(135deg, #181400 0%, #1f1a00 100%);
-    border: 1px solid rgba(212,175,55,0.35);
-    border-radius: var(--radius); padding: 28px 32px;
+    background: rgba(255,255,255,.04); border: 1px solid var(--border); border-radius: 12px;
+    padding: 22px 26px;
   }
-  .case-tag { font-size: 10px; font-weight: 800; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
-  .case-title { font-size: 1.3rem; font-weight: 900; color: var(--white); margin-bottom: 10px; }
-  .case-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
-  .case-stats { display: flex; gap: 28px; margin-top: 22px; flex-wrap: wrap; }
-  .case-stat-val { font-size: 1.6rem; font-weight: 900; color: var(--gold); line-height: 1; }
-  .case-stat-label { font-size: 10px; color: var(--muted); margin-top: 3px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .case-box p { font-size: 15px; color: rgba(255,255,255,.75); line-height: 1.65; }
+  .case-box strong { color: var(--gold-l); }
 
-  /* REACH BOX */
-  .reach-box {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 24px;
-    text-align: center;
+  /* ─── PRICING ─── */
+  .pricing-outer {
+    background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+    padding: 72px 48px; text-align: center; margin-top: 48px;
+    position: relative; overflow: hidden;
   }
-  .reach-num { font-size: 2.2rem; font-weight: 900; color: var(--gold); line-height: 1; }
-  .reach-label { font-size: 11px; color: var(--muted); margin-top: 5px; }
-
-  /* DELIVERABLES */
-  .deliver-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  .deliver-list li { display: flex; gap: 10px; font-size: 13px; color: var(--text); }
-  .deliver-list li::before { content: "→"; color: var(--gold); font-weight: 800; flex-shrink: 0; }
-
-  /* PRICING */
-  .price-box {
-    background: var(--card); border: 1.5px solid rgba(212,175,55,0.4);
-    border-radius: var(--radius); padding: 28px;
-    text-align: center;
+  .pricing-outer::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-l));
   }
-  .price-main { font-size: 2.4rem; font-weight: 900; color: var(--gold); line-height: 1; }
-  .price-label { font-size: 11px; color: var(--muted); margin-top: 5px; letter-spacing: 1px; text-transform: uppercase; }
-  .price-desc { font-size: 12px; color: var(--muted); margin-top: 10px; line-height: 1.55; }
-
-  /* CTA */
-  .cta-box {
-    background: linear-gradient(135deg, #181400, #1a1700);
-    border: 1px solid rgba(212,175,55,0.3);
-    border-radius: var(--radius); padding: 40px;
-    text-align: center;
+  .p-eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 12px; }
+  .p-name { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+  .price-big {
+    font-size: clamp(64px, 11vw, 100px); font-weight: 900; letter-spacing: -.03em;
+    line-height: 1; margin: 16px 0 4px; color: var(--gold);
   }
-  .cta-box h2 { font-size: 1.8rem; margin-bottom: 8px; }
-  .cta-box p { color: var(--muted); font-size: 13px; margin-bottom: 24px; }
-  .btn {
+  .price-big .cur { font-size: 32px; font-weight: 500; opacity: .6; vertical-align: super; color: var(--gold); }
+  .price-big .per { font-size: 24px; font-weight: 400; opacity: .5; color: white; }
+  .p-note { font-size: 14px; color: var(--muted); margin-bottom: 44px; }
+  .p-feats {
+    display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+    margin-bottom: 48px; padding-bottom: 48px;
+    border-bottom: 1px solid var(--border);
+  }
+  .p-feats .pf { font-size: 13px; color: rgba(255,255,255,.65); display: flex; align-items: center; gap: 7px; }
+  .p-feats .pf::before { content: '✓'; color: var(--gold); font-weight: 700; }
+  .cta-btn {
     display: inline-block;
-    background: var(--gold); color: #000;
-    font-size: 13px; font-weight: 900; padding: 12px 28px;
-    border-radius: 100px; text-decoration: none;
-    letter-spacing: 0.5px;
+    background: var(--gold); color: var(--black);
+    padding: 16px 52px; border-radius: 8px;
+    font-size: 16px; font-weight: 800; text-decoration: none;
+    transition: background .2s, transform .2s; letter-spacing: -.01em;
   }
+  .cta-btn:hover { background: var(--gold-l); transform: translateY(-1px); }
+  .p-sub { margin-top: 16px; font-size: 13px; color: rgba(255,255,255,.3); }
 
-  /* WHAT WE DO cards */
-  .step { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--border); }
-  .step:last-child { border-bottom: none; }
-  .step-num { width: 32px; height: 32px; background: rgba(212,175,55,0.12); border: 1px solid rgba(212,175,55,0.3); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 900; color: var(--gold); flex-shrink: 0; }
-  .step-title { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 3px; }
-  .step-desc { font-size: 12px; color: var(--muted); }
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 48px 32px; text-align: center; font-size: 14px;
+    color: rgba(255,255,255,.3);
+  }
+  footer strong { color: rgba(255,255,255,.7); }
+  footer a { color: var(--gold); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
 
-  /* FOOTER */
-  footer { border-top: 1px solid var(--border); padding: 24px 32px; text-align: center; font-size: 11px; color: var(--muted); }
-
-  @media (max-width: 760px) {
-    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-    nav { padding: 0 16px; }
-    main { padding: 28px 16px 60px; }
-    .case-box { padding: 20px; }
-    .cta-box { padding: 28px 20px; }
+  @media (max-width: 768px) {
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+    .case-nums { gap: 28px; }
+  }
+  @media (max-width: 520px) {
+    .hero { padding: 64px 20px 60px; }
+    .section { padding: 60px 20px; }
+    .topnav { padding: 0 20px; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .pricing-outer { padding: 48px 24px; }
+    .case-wrap { padding: 36px 24px; }
   }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-logo">
-    <span class="nav-k">K</span>
-    <span class="nav-name">Karma Be Special × TikTok Ads</span>
+<!-- TOP NAV -->
+<nav class="topnav">
+  <div class="nav-left">
+    <div class="k-logo">K</div>
+    <span class="nav-title">Karma Be Special × TikTok Ads</span>
   </div>
-  <div class="nav-right">Dolphin Wave Media · 2026</div>
+  <span class="nav-right">Dolphin Wave Media · 2026</span>
 </nav>
 
-<main>
-
-<!-- ─── HERO ─── -->
-<section>
-  <div class="badge"><span class="dot-live"></span> TikTok — neprebádaný kanál</div>
+<!-- HERO -->
+<div class="hero">
+  <span class="hero-chip"><span class="dot"></span>TikTok — Neprebádaný kanál</span>
   <h1>Karma je pripravená<br>na TikTok.</h1>
-  <p class="sub" style="max-width:520px; font-size:15px; line-height:1.6;">Máte obsah. Máte produkt. Máte maržu. Chýba len správne nastavená platená reklama a niekto, kto to postrá.</p>
-
-  <div class="grid-4">
-    <div class="kpi">
-      <div class="kpi-label">Mesačný obrat</div>
-      <div class="kpi-value gold">750+</div>
-      <div class="kpi-sub">tričiek / mesiac · rekord mar.</div>
+  <p>Máte obsah. Máte produkt. Máte maržu. Chýba len správne nastavená platená reklama a niekto, kto to postrá.</p>
+  <div class="hero-stats">
+    <div class="hstat">
+      <span class="hlabel">Mesačný obrat</span>
+      <span class="hnum gold">750+</span>
+      <span class="hsub">tričiek / mesiac · rekord mar.</span>
     </div>
-    <div class="kpi">
-      <div class="kpi-label">Marža na produkte</div>
-      <div class="kpi-value gold">~50%</div>
-      <div class="kpi-sub">výroba na Slovensku</div>
+    <div class="hstat">
+      <span class="hlabel">Marža na produkte</span>
+      <span class="hnum gold">~50%</span>
+      <span class="hsub">výroba na Slovensku</span>
     </div>
-    <div class="kpi">
-      <div class="kpi-label">TikTok teraz</div>
-      <div class="kpi-value" style="font-size:1.5rem; color:#888;">100–500</div>
-      <div class="kpi-sub">views / video · nulové ads</div>
+    <div class="hstat">
+      <span class="hlabel">TikTok teraz</span>
+      <span class="hnum muted">100–500</span>
+      <span class="hsub">views / video · nulové ads</span>
     </div>
-    <div class="kpi">
-      <div class="kpi-label">Potenciálny dosah</div>
-      <div class="kpi-value gold">1.2M+</div>
-      <div class="kpi-sub">ľudí · CZ + PL + SK</div>
+    <div class="hstat">
+      <span class="hlabel">Potenciálny dosah</span>
+      <span class="hnum gold">1.2M+</span>
+      <span class="hsub">ľudí · CZ + PL + SK</span>
     </div>
   </div>
-</section>
+</div>
 
-<hr>
+<hr class="section-divider">
 
-<!-- ─── PREČO TIKTOK TERAZ ─── -->
-<section>
-  <div class="label">Situácia</div>
+<!-- SITUÁCIA -->
+<div class="section">
+  <span class="stag">Situácia</span>
   <h2>Kde Karma stojí dnes</h2>
-  <p class="sub">Meta funguje, Instagram rastie. TikTok je zatiaľ nulový — a to je príležitosť, nie problém.</p>
+  <p class="lead">Meta funguje, Instagram rastie. TikTok je zatiaľ nulový — a to je príležitosť, nie problém.</p>
+  <table class="status-table">
+    <thead>
+      <tr>
+        <th>Kanál</th>
+        <th>Stav</th>
+        <th>Platená reklama</th>
+        <th>Potenciál</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="channel-name">Meta (FB + IG)</span></td>
+        <td><span class="badge badge-green">Funguje</span></td>
+        <td><span class="badge badge-green">Aktívna</span></td>
+        <td style="color: rgba(255,255,255,.6); font-size:13px;">Škálovateľná — ďalší rast možný</td>
+      </tr>
+      <tr>
+        <td><span class="channel-name">Instagram Organic</span></td>
+        <td><span class="badge badge-orange">Rastie</span></td>
+        <td><span class="badge badge-orange">Čiastočne</span></td>
+        <td style="color: rgba(255,255,255,.6); font-size:13px;">Solídna základňa, doplnok k TikToku</td>
+      </tr>
+      <tr>
+        <td><span class="channel-name">TikTok</span></td>
+        <td><span class="badge badge-red">Nulový</span></td>
+        <td><span class="badge badge-red">Žiadna</span></td>
+        <td><span class="badge badge-gold">1.2M+ dosah · CZ PL SK</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-  <div class="card" style="padding:0; overflow:hidden; margin-bottom:16px;">
-    <table>
-      <thead>
-        <tr>
-          <th>Kanál</th>
-          <th>Stav</th>
-          <th>Platená reklama</th>
-          <th>Potenciál</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong style="color:var(--white);">Meta (FB/IG)</strong></td>
-          <td><span class="pill green">Funguje</span></td>
-          <td>Áno · niekto iný</td>
-          <td style="color:var(--muted);">Obsadené</td>
-        </tr>
-        <tr>
-          <td><strong style="color:var(--white);">TikTok organic</strong></td>
-          <td><span class="pill white">Slabý</span></td>
-          <td>Žiadna</td>
-          <td style="color:var(--gold); font-weight:800;">Obrovský ↑</td>
-        </tr>
-        <tr>
-          <td><strong style="color:var(--white);">TikTok Ads</strong></td>
-          <td><span class="pill white">Nespustené</span></td>
-          <td>€0</td>
-          <td style="color:var(--gold); font-weight:800;">Okamžitý štart ↑</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<hr class="section-divider">
 
-  <div class="card gold-border">
-    <h3 style="color:var(--gold); margin-bottom:6px;">Kľúčová výhoda: existujúci obsah</h3>
-    <p style="font-size:13px; color:var(--muted); line-height:1.6;">Nemusia vznikať nové videá. Vaše existujúce videá z Instagramu a TikToku spustíme ako platené reklamy — otestujeme čo funguje, škálujeme víťazov. Rýchly štart bez extra produkcie.</p>
-  </div>
-</section>
-
-<hr>
-
-<!-- ─── PRÍPADOVÁ ŠTÚDIA SIMA STAR ─── -->
-<section>
-  <div class="label">Prípadová štúdia</div>
-  <h2>Sima Star — ako to ide, keď sa to robí správne</h2>
-  <p class="sub">Slovenský streetwear brand. Nový koncept na trhu. Organický rast cez autentický obsah.</p>
-
-  <div class="case-box">
-    <div class="case-tag">Prípadová štúdia · Sima Star</div>
-    <div class="case-title">Ružová šiltovka, ktorá zmenila pravidlá</div>
-    <div class="case-desc">
-      Sima Star vstúpil na trh s konceptom, ktorý v Čechách neexistoval — brandované šiltovky s osobnosťou. Namiesto štúdiových produktových videí natáčali street interviews, autentické rozhovory a behind-the-scenes obsah. Výsledok: virálny rast bez platenej reklamy, prvý drop vypredaný do týždňov od spustenia.
-      <br><br>
-      <strong style="color:var(--white);">Hlavná lekcia:</strong> Obsah, ktorý nevyzerá ako reklama, konvertuje výrazne lepšie. Práve to plánujeme aplikovať na Karmu na TikToku — autentický obsah z výroby, street formáty, POV videá.
+<!-- PREČO TIKTOK ADS -->
+<div class="section">
+  <span class="stag">Prečo TikTok Ads</span>
+  <h2>Najnižší CPM.<br>Najvyšší organický dosah.</h2>
+  <p class="lead">TikTok Ads kombinuje silu platenej distribúcie s organickým virálnym potenciálom — žiadna iná platforma to nevie.</p>
+  <div class="ads-grid">
+    <div class="ads-card">
+      <div class="anum">3–5×</div>
+      <h3>Nižší CPM ako Meta</h3>
+      <p>TikTok Ads stoja zlomok ceny, pričom dosah je porovnateľný alebo vyšší</p>
     </div>
-    <div class="case-stats">
-      <div>
-        <div class="case-stat-val">10k+</div>
-        <div class="case-stat-label">views na kľúčových videách</div>
-      </div>
-      <div>
-        <div class="case-stat-val">0→11k</div>
-        <div class="case-stat-label">followeri od nuly</div>
-      </div>
-      <div>
-        <div class="case-stat-val">Vypredané</div>
-        <div class="case-stat-label">prvý drop</div>
-      </div>
-      <div>
-        <div class="case-stat-val">Organika</div>
-        <div class="case-stat-label">hlavný driver rastu</div>
-      </div>
+    <div class="ads-card">
+      <div class="anum">52%</div>
+      <h3>Používateľov nakupuje</h3>
+      <p>Po zhliadnutí produktu na TikToku — priamy vplyv na predaj e-shopu</p>
+    </div>
+    <div class="ads-card">
+      <div class="anum">~50%</div>
+      <h3>Marža = priestor na škálovanie</h3>
+      <p>S marža 50% je CAC z TikToku ľahko profitabilný pri správnom funneli</p>
+    </div>
+    <div class="ads-card">
+      <div class="anum">1.2M+</div>
+      <h3>TAM v CZ + PL + SK</h3>
+      <p>Osloviteľný trh v troch krajinách s rovnakým produktom a minimálnou lokalizáciou</p>
     </div>
   </div>
-</section>
+</div>
 
-<hr>
+<hr class="section-divider">
 
-<!-- ─── POTENCIÁLNY DOSAH ─── -->
-<section>
-  <div class="label">Dosah</div>
-  <h2>Koľko ľudí môžeme osloviť</h2>
-  <p class="sub">TikTok Ads Manager · cielenie: muži 20–30 · oblečenie · SK + CZ + PL</p>
-
-  <div class="grid-3" style="margin-bottom:20px;">
-    <div class="reach-box">
-      <div class="reach-num">1.2M</div>
-      <div class="reach-label">Konzervatívny odhad<br>CZ + PL</div>
-    </div>
-    <div class="reach-box" style="border-color:rgba(212,175,55,0.4); background:linear-gradient(135deg,#181400,#1f1a00);">
-      <div class="reach-num" style="font-size:2.8rem;">2.2M</div>
-      <div class="reach-label" style="color:var(--gold);">Optimistický odhad<br>CZ + PL + SK</div>
-    </div>
-    <div class="reach-box">
-      <div class="reach-num">€900</div>
-      <div class="reach-label">Budget / mesiac<br>do TikTok reklám</div>
-    </div>
-  </div>
-
-  <div class="card" style="background:#181400; border-color:rgba(212,175,55,0.2);">
-    <p style="font-size:13px; color:var(--muted); line-height:1.65;">
-      Pre porovnanie: Meta dáva Karma mesačne ~€4 000 do reklamy. TikTok s €900/mes. je test s obmedzeným rizikom — ak ROAS vyjde, škálujeme. Ak nie, optimalizujeme obsah.
-      <strong style="color:var(--white);">Pri 50% marži a cene tričky €42 stačí 22 predajov/mesiac na pokrytie celého ad spend.</strong>
-    </p>
-  </div>
-</section>
-
-<hr>
-
-<!-- ─── ČO ROBÍME ─── -->
-<section>
-  <div class="label">Čo dostanete</div>
-  <h2>Čo je v spolupráci zahrnuté</h2>
-  <p class="sub" style="margin-bottom:20px;">Stačí prideliť prístup. Zvyšok je na nás.</p>
-
-  <div class="card">
-    <div class="step">
-      <div class="step-num">1</div>
-      <div>
-        <div class="step-title">Setup & Pixel tracking</div>
-        <div class="step-desc">Napojenie TikTok Pixelu na Shoptet (natívna integrácia). Tracking každej objednávky z TikToku — vidíme presne koľko nás stojí jeden predaj.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <div>
-        <div class="step-title">Spustenie kampaní z existujúceho obsahu</div>
-        <div class="step-desc">Vaše najlepšie videá (Instagram + TikTok) zaradíme do platených kampaní. Žiadna extra produkcia v 1. mesiaci — testujeme čo konvertuje.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <div>
-        <div class="step-title">Strategické rozdelenie budgetu</div>
-        <div class="step-desc">TOF (studená publika) + retargeting. Cieľovanie: muži 20–30, SK/CZ/PL, záujem o streetwear a módu. Škálovanie podľa výsledkov.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">4</div>
-      <div>
-        <div class="step-title">Mesačný reporting</div>
-        <div class="step-desc">Jasné čísla: koľko sme minuli, koľko predajov prišlo z TikToku, cena za predaj, ROAS. Žiadne opscourityné metriky — len výsledky.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">5</div>
-      <div>
-        <div class="step-title">Optimalizácia a odporúčania obsahu</div>
-        <div class="step-desc">Na základe dát z kampaní vieme povedať, aký typ obsahu najviac konvertuje. Postupne vedieme produkciu smerom k formátom, ktoré fungujú.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr>
-
-<!-- ─── PRICING ─── -->
-<section>
-  <div class="label">Cenník</div>
-  <h2>Vyber si model spolupráce</h2>
-  <p class="sub" style="margin-bottom:24px;">Dve možnosti — podľa toho, čo ti viac vyhovuje.</p>
-
-  <div class="grid-2" style="margin-bottom:20px;">
-
-    <!-- OPTION A -->
-    <div class="price-box" style="text-align:left; padding:28px;">
-      <div style="font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:14px;">Možnosť A</div>
-      <div class="price-main" style="font-size:3rem;">€450</div>
-      <div class="price-label">fix / mesiac</div>
-      <div style="border-top:1px solid var(--border); margin:18px 0;"></div>
-      <ul class="deliver-list" style="gap:8px;">
-        <li>Správa TikTok kampaní</li>
-        <li>Pixel setup & tracking</li>
-        <li>Mesačný reporting</li>
-        <li>Optimalizácia a odporúčania</li>
+<!-- SCOPE -->
+<div class="section">
+  <span class="stag">Čo robíme</span>
+  <h2>Kompletná TikTok Ads správa<br>od A po Z</h2>
+  <p class="lead">Nerobíme len reklamy. Staráme sa o celý funnel — od kreatívy po konverziu.</p>
+  <div class="scope-grid">
+    <div class="scope-card featured">
+      <div class="sicon">🎬</div>
+      <h3>Kreatívy & Content</h3>
+      <ul>
+        <li>Scriptovanie video reklám (hooks, storytelling, CTA)</li>
+        <li>Kreatívny brief pre natáčanie</li>
+        <li>Trend-aligned formáty — čo ide na TikToku teraz</li>
+        <li>A/B testovanie viacerých hookov a formátov</li>
+        <li>UGC brief pre zákazníkov / tvorcom</li>
+        <li>Storyboarding a vizuálna konzistencia</li>
       </ul>
-      <div style="margin-top:16px; font-size:12px; color:var(--muted);">Pevná mesačná cena. Bez percenta z obratu. Ideálne ak chceš predvídateľné náklady.</div>
     </div>
-
-    <!-- OPTION B -->
-    <div class="price-box gold-border" style="text-align:left; padding:28px; background:linear-gradient(135deg,#181400,#1f1a00);">
-      <div style="font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:14px;">Možnosť B · Odporúčame</div>
-      <div style="display:flex; align-items:flex-end; gap:12px; flex-wrap:wrap;">
-        <div>
-          <div class="price-main" style="font-size:2.4rem;">€200</div>
-          <div class="price-label">jednorazovo</div>
-        </div>
-        <div style="font-size:1.5rem; color:var(--gold); font-weight:900; padding-bottom:4px;">+</div>
-        <div>
-          <div class="price-main" style="font-size:2.4rem;">10%</div>
-          <div class="price-label">z TikTok obratu</div>
-        </div>
-      </div>
-      <div style="border-top:1px solid rgba(212,175,55,0.2); margin:18px 0;"></div>
-      <ul class="deliver-list" style="gap:8px;">
-        <li>Všetko ako v možnosti A</li>
-        <li>Nižší vstupný poplatok</li>
-        <li>Platíš viac len keď my prinášame</li>
-        <li>Naša motivácia = tvoje výsledky</li>
+    <div class="scope-card">
+      <div class="sicon">🎯</div>
+      <h3>Kampaňový setup</h3>
+      <ul>
+        <li>Štruktúra kampaní (Awareness → Retargeting)</li>
+        <li>Pixel setup a conversion tracking</li>
+        <li>Audience targeting — záujmy, lookalike, custom</li>
+        <li>Bid stratégia podľa cieľa (CPP, ROAS)</li>
+        <li>TikTok Shop integrácia (ak relevantné)</li>
       </ul>
-      <div style="margin-top:16px; font-size:12px; color:var(--muted);">€200 jednorazovo za setup. Potom 10% z obratu, ktorý preukazateľne príde z TikTok kampaní.</div>
+    </div>
+    <div class="scope-card">
+      <div class="sicon">🔄</div>
+      <h3>Optimalizácia</h3>
+      <ul>
+        <li>Týždenná optimalizácia kampane</li>
+        <li>Škálovanie fungujúcich ads sád</li>
+        <li>Vypínanie neefektívnych kreatív</li>
+        <li>Frekvenčný monitoring — zamedzenie ad fatigue</li>
+        <li>Sezónne a promo kampane</li>
+      </ul>
+    </div>
+    <div class="scope-card">
+      <div class="sicon">📊</div>
+      <h3>Reporting</h3>
+      <ul>
+        <li>Mesačný report: CPM, CPC, ROAS, CPP</li>
+        <li>Analýza top-performing kreatív</li>
+        <li>Odporúčania na ďalší mesiac</li>
+        <li>Sledovanie tržieb z TikToku</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- CASE STUDY -->
+<div class="section">
+  <span class="stag">Case Study</span>
+  <h2>Čo sme dokázali<br>pre iných.</h2>
+  <p class="lead">Výsledky z reálnych kampaní — nie čísla z prezentácie.</p>
+  <div class="case-wrap">
+    <div class="case-label">Fashion / Accessories — CZ / SK</div>
+    <h3>Simastar</h3>
+    <p class="case-sub">Fuzzy Caps & Beanies — originálny produkt s vlastnou komunitou</p>
+    <div class="case-nums">
+      <div class="cnum">
+        <div class="cn gold">41K+</div>
+        <div class="cl">Instagram followers</div>
+      </div>
+      <div class="cnum">
+        <div class="cn gold">16K+</div>
+        <div class="cl">TikTok followers</div>
+      </div>
+      <div class="cnum">
+        <div class="cn white">100%</div>
+        <div class="cl">Vypredaný drop</div>
+      </div>
+    </div>
+    <div class="case-box">
+      <p>Celý drop bol <strong>kompletne vypredaný</strong> krátko po spustení. Kľúč? <strong>Moderný a autentický content</strong>, ktorý ľudí skutočne zaujal — vizuálne silný, zladený s TikTok algoritmom a plne konzistentný s identitou značky. Žiadne triky, len správny content v správnom čase.</p>
+      <a href="https://www.instagram.com/simastar.co/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.75);padding:8px 18px;border-radius:100px;font-size:13px;font-weight:600;text-decoration:none;">
+        📸 @simastar.co na Instagrame →
+      </a>
     </div>
   </div>
 
-  <div class="card gold-border">
-    <h3 style="margin-bottom:12px;">Príklad výpočtu · Možnosť B</h3>
-    <div class="card" style="padding:0; overflow:hidden; background:var(--card2);">
-      <table>
-        <thead>
-          <tr>
-            <th>Scenár</th>
-            <th>TikTok obrat</th>
-            <th>Vaša marža (50%)</th>
-            <th>Naša odmena (10%)</th>
-            <th>Váš čistý zisk</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Konzervatívny</td>
-            <td>€2 000</td>
-            <td>€1 000</td>
-            <td style="color:var(--muted);">€200</td>
-            <td style="color:var(--gold); font-weight:800;">€800</td>
-          </tr>
-          <tr>
-            <td>Realistický</td>
-            <td>€5 000</td>
-            <td>€2 500</td>
-            <td style="color:var(--muted);">€500</td>
-            <td style="color:var(--gold); font-weight:800;">€2 000</td>
-          </tr>
-          <tr class="row-total">
-            <td>Optimistický</td>
-            <td>€10 000</td>
-            <td>€5 000</td>
-            <td style="color:var(--muted);">€1 000</td>
-            <td style="color:var(--gold);">€4 000</td>
-          </tr>
-        </tbody>
-      </table>
+  <div style="margin-top: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px;">
+    <div class="case-wrap" style="margin-top: 0; padding: 32px;">
+      <div class="case-label">Fashion E-commerce</div>
+      <div style="font-size: 36px; font-weight: 800; color: var(--gold); line-height:1; margin: 8px 0 4px;">5.59×</div>
+      <div style="font-size: 12px; color: var(--muted); margin-bottom: 14px; text-transform: uppercase; letter-spacing: .06em; font-weight: 600;">ROAS z Meta kampaní</div>
+      <p style="font-size: 14px; color: rgba(255,255,255,.55);">Pánska Elegancia — ad spend €7 020 → revenue €39 223.</p>
     </div>
-    <p style="font-size:11px; color:var(--muted); margin-top:10px;">* Nezahŕňa ad spend €900/mes. ktorý ide priamo TikToku. Setup fee €200 iba jednorazovo pri štarte.</p>
+    <div class="case-wrap" style="margin-top: 0; padding: 32px;">
+      <div class="case-label">E-commerce</div>
+      <div style="font-size: 36px; font-weight: 800; color: var(--gold); line-height:1; margin: 8px 0 4px;">18.85×</div>
+      <div style="font-size: 12px; color: var(--muted); margin-bottom: 14px; text-transform: uppercase; letter-spacing: .06em; font-weight: 600;">Najvyšší dosiahnutý ROAS</div>
+      <p style="font-size: 14px; color: rgba(255,255,255,.55);">Powersports — ad spend €1 008 → revenue €19 003.</p>
+    </div>
   </div>
-</section>
+</div>
 
-<hr>
+<hr class="section-divider">
 
-<!-- ─── CTA ─── -->
-<section>
-  <div class="cta-box">
-    <h2>Ideme do toho?</h2>
-    <p>Prvý mesiac je test. Spustíme, sledujeme, vyhodnotíme. Ak čísla dávajú zmysel — škálujeme.</p>
-    <a href="mailto:damiandrahovsky@gmail.com" class="btn">📩 Dohodnúť spoluprácu</a>
+<!-- PRICING -->
+<div class="section">
+  <span class="stag">Cenová ponuka</span>
+  <h2>Jedna fixná cena.<br>Žiadne prekvapenia.</h2>
+  <p class="lead">Kompletná správa TikTok Ads — všetko zahrnuté, bez skrytých poplatkov.</p>
+  <div class="pricing-outer">
+    <p class="p-eyebrow">TikTok Ads Management</p>
+    <p class="p-name">Karma Be Special</p>
+    <div class="price-big"><span class="cur">€</span>400<span class="per"> / mesiac</span></div>
+    <p class="p-note">Fixná mesačná odmena · + ad spend (min. odporúčaný budget 400–600 €/mes)</p>
+    <div class="p-feats">
+      <span class="pf">Kreatívny brief & scripty</span>
+      <span class="pf">Kampaňový setup</span>
+      <span class="pf">Týždenná optimalizácia</span>
+      <span class="pf">A/B testovanie</span>
+      <span class="pf">Audience targeting</span>
+      <span class="pf">Conversion tracking</span>
+      <span class="pf">Mesačný report</span>
+      <span class="pf">Bez záväznej zmluvy</span>
+    </div>
+    <a href="mailto:info@dolphinwave-media.com" class="cta-btn">Ideme do toho →</a>
+    <p class="p-sub">Odpovieme do 24 hodín · <a href="https://www.dolphinwave-media.com" target="_blank" rel="noopener noreferrer" style="color: var(--gold);">dolphinwave-media.com</a></p>
   </div>
-</section>
+</div>
 
-</main>
-
+<!-- FOOTER -->
 <footer>
-  <div style="margin-bottom:5px;">
-    <span style="background:var(--gold); color:#000; font-size:11px; font-weight:900; padding:2px 7px; border-radius:3px; margin-right:8px;">K</span>
-    <strong style="color:var(--white);">Karma Be Special</strong>
-    <span style="color:var(--border); margin:0 8px;">×</span>
-    <span style="color:var(--muted);">Dolphin Wave Media</span>
-  </div>
-  <p>TikTok Ads Proposal · 2026 · Pripravil: Damián Drahovsky · damiandrahovsky@gmail.com</p>
+  <p><strong>Dolphin Wave Media</strong> — Damian Drahovsky</p>
+  <p style="margin-top: 10px;">
+    <a href="https://www.dolphinwave-media.com" target="_blank" rel="noopener noreferrer">dolphinwave-media.com</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:info@dolphinwave-media.com">info@dolphinwave-media.com</a>
+  </p>
+  <p style="margin-top: 20px; font-size: 11px; color: rgba(255,255,255,.15);">© 2026 Dolphin Wave Media. Všetky práva vyhradené.</p>
 </footer>
 
 </body>
